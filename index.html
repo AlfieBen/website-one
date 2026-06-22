@@ -128,9 +128,17 @@ position:absolute;
 
 z-index:0;
 
-width:200vw;
+width:160vw;
 
-height:200vh;
+height:160vh;
+
+top:50%;
+
+left:50%;
+
+
+transform:translate(-50%,-50%);
+
 
 background:
 
@@ -143,6 +151,7 @@ transparent 65%);
 
 filter:blur(45px);
 
+
 animation:blueMove 12s infinite ease-in-out;
 
 }
@@ -151,16 +160,31 @@ animation:blueMove 12s infinite ease-in-out;
 
 @keyframes blueMove{
 
+
 0%{
-transform:translate(-60%,-50%) scale(.9);
+
+transform:
+translate(-50%,-50%)
+scale(.9);
+
 }
+
 
 50%{
-transform:translate(-45%,-35%) scale(1.15);
+
+transform:
+translate(-45%,-45%)
+scale(1.15);
+
 }
 
+
 100%{
-transform:translate(-60%,-50%) scale(.9);
+
+transform:
+translate(-50%,-50%)
+scale(.9);
+
 }
 
 }
@@ -204,7 +228,12 @@ inset 0 0 30px rgba(255,255,255,.02),
 0 30px 100px rgba(0,0,0,.7);
 
 
-transition:.35s;
+
+transition:
+
+transform .35s ease,
+
+box-shadow .35s ease;
 
 }
 
@@ -212,7 +241,12 @@ transition:.35s;
 
 .card:hover{
 
-transform:translateY(-10px) scale(1.03);
+transform:
+
+translateY(-10px)
+
+scale(1.03);
+
 
 
 box-shadow:
@@ -220,6 +254,7 @@ box-shadow:
 0 45px 130px rgba(0,0,0,.9);
 
 }
+
 
 
 
@@ -248,6 +283,7 @@ margin-top:40px;
 color:#888;
 
 }
+
 
 
 
@@ -340,8 +376,6 @@ display:none;
 
 
 
-/* FIXED LIGHT MODE */
-
 .light {
 
 background:
@@ -364,21 +398,21 @@ color:#111;
 
 
 
-.light .card {
+.light .card{
 
 background:
 
-rgba(255,255,255,0.35);
+rgba(255,255,255,.35);
 
 border-color:
 
-rgba(0,0,0,0.15);
+rgba(0,0,0,.15);
 
 }
 
 
 
-.light p {
+.light p{
 
 color:#333;
 
@@ -386,21 +420,21 @@ color:#333;
 
 
 
-.light .themeButton {
+.light .themeButton{
 
 color:#111;
 
 background:
 
-rgba(0,0,0,0.08);
+rgba(0,0,0,.08);
 
 }
 
 
 
 
-@media(max-width:600px){
 
+@media(max-width:600px){
 
 .card{
 
@@ -412,7 +446,6 @@ border-radius:28px;
 
 }
 
-
 }
 
 
@@ -420,6 +453,8 @@ border-radius:28px;
 </style>
 
 </head>
+
+
 
 <body>
 
@@ -437,6 +472,8 @@ border-radius:28px;
 <p>I'm better than you and you know it</p>
 
 </div>
+
+
 
 
 
@@ -469,6 +506,7 @@ Back
 
 
 </div>
+
 
 
 
@@ -572,14 +610,12 @@ text:"You found everything hidden on this page."
 
 
 
+
 function save(){
 
 localStorage.setItem(
-
 "achievements",
-
 JSON.stringify(data)
-
 );
 
 }
@@ -599,6 +635,7 @@ save();
 }
 
 }
+
 
 
 
@@ -631,7 +668,6 @@ if(id=="completion" && count<9)return;
 html+=`
 
 <div class="achievement ${data[id]?"":"locked"}">
-
 
 <h3>
 
@@ -682,8 +718,8 @@ openAchievements();
 
 }
 
-
 };
+
 
 
 
@@ -699,9 +735,11 @@ unlock("explorer");
 achOpen++;
 
 
-if(achOpen>=3)
+if(achOpen>=3){
 
 unlock("triopen");
+
+}
 
 
 
@@ -722,6 +760,7 @@ render();
 
 function closeAchievements(){
 
+
 document.getElementById("achievements").classList.add("hidden");
 
 
@@ -733,11 +772,28 @@ document.getElementById("main").classList.remove("hidden");
 
 
 
+
 function toggleTheme(){
+
 
 document.body.classList.toggle("light");
 
+
+if(document.body.classList.contains("light")){
+
+document.querySelector(".themeButton").textContent="🌙";
+
+}
+
+else{
+
+document.querySelector(".themeButton").textContent="☀";
+
+}
+
+
 unlock("night");
+
 
 }
 
@@ -773,6 +829,7 @@ render();
 }
 
 }
+
 
 
 
