@@ -9,15 +9,21 @@
 
 <title>Alfie Ben Levey</title>
 
+
 <style>
 
+
 html,body{
+
 width:100%;
 height:100%;
+
 margin:0;
+
 overflow:hidden;
-background:#050505;
+
 }
+
 
 
 body{
@@ -26,21 +32,24 @@ min-height:100vh;
 min-height:100dvh;
 
 display:flex;
+
 justify-content:center;
+
 align-items:center;
 
-font-family:Arial, Helvetica, sans-serif;
 
-color:#f5f5f5;
+font-family:Arial,Helvetica,sans-serif;
+
+color:white;
+
 
 background:
-radial-gradient(circle at center,#202020,#121212,#050505);
+
+radial-gradient(circle,#202020,#121212,#050505);
 
 transition:.5s;
 
 }
-
-
 
 
 
@@ -52,7 +61,7 @@ top:25px;
 
 right:25px;
 
-z-index:9999;
+z-index:999;
 
 width:45px;
 
@@ -60,138 +69,19 @@ height:45px;
 
 border-radius:50%;
 
-border:1px solid rgba(255,255,255,.15);
+border:1px solid rgba(255,255,255,.2);
 
-background:rgba(255,255,255,.08);
+background:rgba(255,255,255,.1);
 
 color:white;
+
+font-size:20px;
 
 cursor:pointer;
 
 backdrop-filter:blur(10px);
 
-font-size:20px;
-
 }
-
-
-
-
-
-body::before{
-
-content:"";
-
-position:absolute;
-
-z-index:0;
-
-width:200vw;
-
-height:200vh;
-
-background:
-
-radial-gradient(circle,
-
-rgba(255,255,255,.035),
-
-transparent 70%);
-
-animation:greyMove 10s infinite alternate;
-
-}
-
-
-
-@keyframes greyMove{
-
-from{
-transform:translate(-40px,-30px);
-}
-
-to{
-transform:translate(40px,30px);
-}
-
-}
-
-
-
-
-
-body::after{
-
-content:"";
-
-position:absolute;
-
-z-index:0;
-
-width:160vw;
-
-height:160vh;
-
-top:50%;
-
-left:50%;
-
-
-transform:translate(-50%,-50%);
-
-
-background:
-
-radial-gradient(circle,
-
-rgba(45,90,255,.28),
-
-transparent 65%);
-
-
-filter:blur(45px);
-
-
-animation:blueMove 12s infinite ease-in-out;
-
-}
-
-
-
-@keyframes blueMove{
-
-
-0%{
-
-transform:
-translate(-50%,-50%)
-scale(.9);
-
-}
-
-
-50%{
-
-transform:
-translate(-45%,-45%)
-scale(1.15);
-
-}
-
-
-100%{
-
-transform:
-translate(-50%,-50%)
-scale(.9);
-
-}
-
-}
-
-
-
-
 
 
 
@@ -199,19 +89,21 @@ scale(.9);
 
 position:relative;
 
-z-index:2;
+z-index:5;
 
 text-align:center;
 
-width:min(650px,80vw);
+
+width:min(650px,82vw);
+
 
 padding:80px 60px;
 
 
-background:rgba(255,255,255,.045);
+background:rgba(255,255,255,.06);
 
 
-border:1px solid rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.15);
 
 
 border-radius:35px;
@@ -220,20 +112,12 @@ border-radius:35px;
 backdrop-filter:blur(20px);
 
 
-
 box-shadow:
-
-inset 0 0 30px rgba(255,255,255,.02),
 
 0 30px 100px rgba(0,0,0,.7);
 
 
-
-transition:
-
-transform .35s ease,
-
-box-shadow .35s ease;
+transition:.35s;
 
 }
 
@@ -248,14 +132,11 @@ translateY(-10px)
 scale(1.03);
 
 
-
 box-shadow:
 
 0 45px 130px rgba(0,0,0,.9);
 
 }
-
-
 
 
 
@@ -268,11 +149,7 @@ font-size:clamp(2.2rem,6vw,4rem);
 
 letter-spacing:5px;
 
-font-weight:500;
-
 }
-
-
 
 
 
@@ -280,34 +157,15 @@ p{
 
 margin-top:40px;
 
-color:#888;
+color:rgba(255,255,255,.75);
 
 }
 
 
 
+.hidden{
 
-
-
-.achievement{
-
-text-align:left;
-
-margin:15px 0;
-
-padding:15px;
-
-border-radius:18px;
-
-background:rgba(255,255,255,.06);
-
-}
-
-
-
-.locked{
-
-opacity:.45;
+display:none;
 
 }
 
@@ -321,29 +179,31 @@ max-height:45vh;
 
 overflow-y:auto;
 
-padding-right:8px;
+}
+
+
+
+.achievement{
+
+text-align:left;
+
+margin:15px 0;
+
+padding:15px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.08);
 
 }
 
 
 
-#list::-webkit-scrollbar{
+.locked{
 
-width:6px;
-
-}
-
-
-
-#list::-webkit-scrollbar-thumb{
-
-background:rgba(255,255,255,.25);
-
-border-radius:10px;
+opacity:.45;
 
 }
-
-
 
 
 
@@ -364,33 +224,11 @@ cursor:pointer;
 
 
 
-
-.hidden{
-
-display:none;
-
-}
-
-
-
-
-
-
-.light {
+.light{
 
 background:
 
-radial-gradient(
-
-circle at center,
-
-#eeeeee,
-
-#bbbbbb,
-
-#777777
-
-);
+radial-gradient(circle,#eee,#bbb,#777);
 
 color:#111;
 
@@ -400,13 +238,7 @@ color:#111;
 
 .light .card{
 
-background:
-
-rgba(255,255,255,.35);
-
-border-color:
-
-rgba(0,0,0,.15);
+background:rgba(255,255,255,.45);
 
 }
 
@@ -414,7 +246,7 @@ rgba(0,0,0,.15);
 
 .light p{
 
-color:#333;
+color:#222;
 
 }
 
@@ -424,29 +256,33 @@ color:#333;
 
 color:#111;
 
-background:
+}
 
-rgba(0,0,0,.08);
+
+
+.secret{
+
+color:white;
 
 }
 
 
 
+.secret .card{
 
-
-@media(max-width:600px){
-
-.card{
-
-width:82vw;
-
-padding:45px 25px;
-
-border-radius:28px;
+background:rgba(0,0,0,.35);
 
 }
 
+
+
+.secret p{
+
+color:white;
+
 }
+
+
 
 
 
@@ -455,8 +291,8 @@ border-radius:28px;
 </head>
 
 
-
 <body>
+
 
 
 <button class="themeButton" onclick="toggleTheme()">☀</button>
@@ -464,15 +300,16 @@ border-radius:28px;
 
 
 
-
 <div class="card" id="main">
+
 
 <h1>Alfie Ben Levey</h1>
 
+
 <p>I'm better than you and you know it</p>
 
-</div>
 
+</div>
 
 
 
@@ -490,7 +327,7 @@ border-radius:28px;
 
 <button class="reset" onclick="resetAsk()">
 
-Reset Achievements
+Reset
 
 </button>
 
@@ -513,7 +350,6 @@ Back
 
 
 
-
 <script>
 
 
@@ -521,11 +357,21 @@ let data =
 JSON.parse(localStorage.getItem("achievements")) || {};
 
 
+
 let cardClicks=0;
 
-let achOpen=0;
+let opens=0;
 
-let startTime=Date.now();
+let clicks=[];
+
+let secretActive=false;
+
+let start=Date.now();
+
+let normalBackground=
+
+"radial-gradient(circle,#202020,#121212,#050505)";
+
 
 
 
@@ -535,74 +381,75 @@ let startTime=Date.now();
 const achievements={
 
 
-welcome:{
-name:"Welcome",
-hint:"Something happens when you arrive...",
-text:"You arrived. That was the first step."
-},
+welcome:[
+"Welcome",
+"Something happens when you arrive...",
+"You opened the site."
+],
 
 
-explorer:{
-name:"Explorer",
-hint:"Maybe the card has more than one purpose...",
-text:"You looked around instead of leaving."
-},
+explorer:[
+"Explorer",
+"The card may hide something...",
+"You found achievements."
+],
 
 
-colour:{
-name:"Colour Hunter",
-hint:"Some things appear when you click enough...",
-text:"You found the hidden colours."
-},
+colour:[
+"Colour Hunter",
+"Try pressing something a lot...",
+"You found the secret themes."
+],
 
 
-night:{
-name:"Night Mode",
-hint:"There are two sides to this page...",
-text:"You saw both sides."
-},
+night:[
+"Night Mode",
+"Try the button...",
+"You changed the theme."
+],
 
 
-early:{
-name:"Early Visitor",
-hint:"The time you visit might matter...",
-text:"You found the website before most people wake up."
-},
+early:[
+"Early Visitor",
+"Time matters...",
+"You visited before 06:00."
+],
 
 
-professional:{
-name:"Professional",
-hint:"Try doing nothing...",
-text:"You stayed longer than expected."
-},
+professional:[
+"Professional",
+"Wait around...",
+"You stayed for a while."
+],
 
 
-collector:{
-name:"Collector",
-hint:"There are more secrets hidden here...",
-text:"You started collecting."
-},
+collector:[
+"Collector",
+"Find more secrets...",
+"You collected achievements."
+],
 
 
-triopen:{
-name:"Triopen",
-hint:"Maybe opening it once isn't enough...",
-text:"You kept checking."
-},
+triopen:[
+"Triopen",
+"Three times is special...",
+"You opened achievements 3 times."
+],
 
 
-restart:{
-name:"Restarting",
-hint:"Sometimes starting again reveals something...",
-text:"You erased everything. Then found this."
-},
+restart:[
+"Restarting",
+"Starting again...",
+"You reset achievements."
+],
 
 
-completion:{
-name:"Completionist",
-hint:"Hidden",
-text:"You found everything hidden on this page."
-}
+completion:[
+"Completionist",
+"Hidden",
+"You found everything."
+]
+
 
 };
 
@@ -614,8 +461,11 @@ text:"You found everything hidden on this page."
 function save(){
 
 localStorage.setItem(
+
 "achievements",
+
 JSON.stringify(data)
+
 );
 
 }
@@ -624,11 +474,11 @@ JSON.stringify(data)
 
 
 
-function unlock(id){
+function unlock(x){
 
-if(!data[id]){
+if(!data[x]){
 
-data[id]=true;
+data[x]=true;
 
 save();
 
@@ -665,28 +515,19 @@ if(id=="completion" && count<9)return;
 
 
 
+let a=achievements[id];
+
+
+
 html+=`
 
 <div class="achievement ${data[id]?"":"locked"}">
 
-<h3>
 
-${data[id]?"🏆":"🔒"}
-
-${achievements[id].name}
-
-</h3>
+<h3>${data[id]?"🏆":"🔒"} ${a[0]}</h3>
 
 
-<p>
-
-${data[id]?
-
-achievements[id].text:
-
-achievements[id].hint}
-
-</p>
+<p>${data[id]?a[2]:a[1]}</p>
 
 
 </div>
@@ -706,6 +547,8 @@ document.getElementById("list").innerHTML=html;
 
 
 
+
+
 document.getElementById("main").onclick=function(){
 
 
@@ -714,32 +557,16 @@ cardClicks++;
 
 if(cardClicks>=3){
 
-openAchievements();
-
-}
-
-};
-
-
-
-
-
-
-
-function openAchievements(){
-
 
 unlock("explorer");
 
 
-achOpen++;
+opens++;
 
 
-if(achOpen>=3){
+if(opens>=3)
 
 unlock("triopen");
-
-}
 
 
 
@@ -751,7 +578,11 @@ document.getElementById("achievements").classList.remove("hidden");
 
 render();
 
+
 }
+
+
+};
 
 
 
@@ -760,9 +591,7 @@ render();
 
 function closeAchievements(){
 
-
 document.getElementById("achievements").classList.add("hidden");
-
 
 document.getElementById("main").classList.remove("hidden");
 
@@ -773,23 +602,63 @@ document.getElementById("main").classList.remove("hidden");
 
 
 
+
+
 function toggleTheme(){
 
 
+
+if(secretActive){
+
+
+document.body.classList.remove("secret");
+
+
+document.body.style.background=
+
+normalBackground;
+
+
+secretActive=false;
+
+
+return;
+
+
+}
+
+
+
+clicks.push(Date.now());
+
+
+clicks=
+
+clicks.filter(x=>Date.now()-x<5000);
+
+
+
+
+if(clicks.length>=5){
+
+
+secretTheme();
+
+
+secretActive=true;
+
+
+clicks=[];
+
+
+return;
+
+
+}
+
+
+
 document.body.classList.toggle("light");
-
-
-if(document.body.classList.contains("light")){
-
-document.querySelector(".themeButton").textContent="🌙";
-
-}
-
-else{
-
-document.querySelector(".themeButton").textContent="☀";
-
-}
 
 
 unlock("night");
@@ -802,26 +671,99 @@ unlock("night");
 
 
 
+
+
+function secretTheme(){
+
+
+
+let themes=[
+
+
+["#ff7eb3","#65d6ff"],
+
+["#9b5cff","#00ffcc"],
+
+["#ff9966","#ff5e62"],
+
+["#00c6ff","#0072ff"],
+
+["#43e97b","#38f9d7"],
+
+["#f7971e","#ffd200"],
+
+["#ee0979","#ff6a00"],
+
+["#654ea3","#eaafc8"],
+
+["#141e30","#243b55"],
+
+["#000428","#004e92"]
+
+
+];
+
+
+
+let d=new Date();
+
+
+let seed=
+
+d.getFullYear()
+
++d.getMonth()
+
++d.getDate();
+
+
+
+let theme=
+
+themes[seed % themes.length];
+
+
+
+document.body.style.background=
+
+`radial-gradient(circle,${theme[0]},${theme[1]})`;
+
+
+
+document.body.classList.add("secret");
+
+
+unlock("colour");
+
+}
+
+
+
+
+
+
+
 function resetAsk(){
 
 
-if(confirm("Are you sure? This will remove all saved achievements.")){
+if(confirm("Are you sure?")){
 
 
-let old=data.restart;
+let hadRestart=data.restart;
 
 
 data={};
 
 
-if(!old){
+
+if(!hadRestart)
 
 data.restart=true;
 
-}
 
 
 save();
+
 
 render();
 
@@ -835,21 +777,16 @@ render();
 
 
 
-if(Object.keys(data).length==0){
+if(Object.keys(data).length===0)
 
 unlock("welcome");
 
-}
 
 
 
-
-
-if(new Date().getHours()<6){
+if(new Date().getHours()<6)
 
 unlock("early");
-
-}
 
 
 
@@ -858,11 +795,9 @@ unlock("early");
 setInterval(()=>{
 
 
-if(Date.now()-startTime>60000){
+if(Date.now()-start>60000)
 
 unlock("professional");
-
-}
 
 
 },1000);
